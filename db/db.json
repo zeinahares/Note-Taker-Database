@@ -1,7 +1,17 @@
 [
     {
-        "title":"Test Title",
-        "text":"Test text",
-        "id": 1
+        "title": "Fix washing machine",
+        "text": "call repairer\n",
+        "id": "2766f857-c0f4-44f7-9c6a-e495061668ed"
+    },
+    {
+        "title": "Submit HW",
+        "text": "finish writing README",
+        "id": "c31f0e8f-3641-41e3-871b-e1043fcca776"
+    },
+    {
+        "title": "Buy USB",
+        "text": "32GB",
+        "id": "327351bb-1db7-4273-b1e7-7be8639ed2f3"
     }
 ]
