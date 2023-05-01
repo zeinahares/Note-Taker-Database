@@ -1,3 +1,38 @@
+const express = require('express');
+const path = require('path');
+const api = require('./routes/index.js');
+
+const PORT = process.env.PORT || 3001;
+
+const app = express();
+
+// Middleware for parsing JSON and urlencoded form data
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use('/api', api);
+
+app.use(express.static('public'));
+
+// The following HTML routes should be created:
+
+// GET /notes should return the notes.html file.
+// GET * should return the index.html file.
+
+// GET Route for note page
+app.get('/notes', (req, res) =>
+  res.sendFile(path.join(__dirname, '/public/notes.html'))
+);
+
+// Wildcard route to direct users to a 404 page
+app.get('*', (req, res) =>
+  res.sendFile(path.join(__dirname, 'public/index.html'))
+);
+
+app.listen(PORT, () =>
+  console.log(`App listening at http://localhost:${PORT} 🚀`)
+);
+
+
 // GIVEN a note-taking application
 // WHEN I open the Note Taker
 // THEN I am presented with a landing page with a link to a notes page
@@ -14,17 +49,9 @@
 
 
 
-
-// route 1, index page with get started button
-// route 2, actual notes page
-
 // The application should have a db.json file on the back end that will be used to store and retrieve notes using the fs module.
 
-// The following HTML routes should be created:
 
-// GET /notes should return the notes.html file.
-
-// GET * should return the index.html file.
 
 // The following API routes should be created:
 
